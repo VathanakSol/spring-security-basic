@@ -1,5 +1,6 @@
 package co.istad.springsecuritybasic.mapper;
 
+import ch.qos.logback.core.model.ComponentModel;
 import co.istad.springsecuritybasic.model.Role;
 import co.istad.springsecuritybasic.model.User;
 import co.istad.springsecuritybasic.model.dto.UserRequest;
@@ -12,8 +13,7 @@ import org.mapstruct.Named;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
-@Mapper(componentModel = "spring")
+@Mapper(componentModel ="spring")
 public interface UserMapper {
     @Mappings({
             @Mapping(target = "id", ignore = true),
@@ -32,5 +32,4 @@ public interface UserMapper {
                 .map(Role::getName)
                 .collect(Collectors.toSet());
     }
-
 }

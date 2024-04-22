@@ -5,10 +5,10 @@ import co.istad.springsecuritybasic.model.Role;
 import co.istad.springsecuritybasic.model.User;
 import co.istad.springsecuritybasic.model.dto.UserRequest;
 import co.istad.springsecuritybasic.model.dto.UserResponse;
+import co.istad.springsecuritybasic.repository.AuthorityRepository;
 import co.istad.springsecuritybasic.repository.RoleRepository;
 import co.istad.springsecuritybasic.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserMapper userMapper;
     private final RoleRepository roleRepository;
+    private final AuthorityRepository authorityRepository;
     private final UserRepository userRepository;
 
     @Override
